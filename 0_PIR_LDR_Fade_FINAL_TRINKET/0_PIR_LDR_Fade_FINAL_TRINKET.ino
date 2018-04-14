@@ -45,7 +45,7 @@ void loop() {
       if (lockLow) {
         //makes sure we wait for a transition to LOW before any further output is made:
         lockLow = false;
-        FadeIn(0xff, 0x00, 0x00, 10); //Wait until Serial print work is done before activating strip
+        FadeIn(0x00, 0x00, 0xff, 10); //Wait until Serial print work is done before activating strip
         delay(50);
       }
       takeLowTime = true;
@@ -61,7 +61,7 @@ void loop() {
     if (!lockLow && millis() - lowIn > pause) {
       //makes sure this block of code is only executed again after a new motion sequence has been detected
       lockLow = true;
-      FadeOut(0xff, 0x00, 0x00, 10);
+      FadeOut(0x00, 0x00, 0xff, 10);
       delay(50);
     }
   }
