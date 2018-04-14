@@ -45,7 +45,7 @@ void loop() {
       if (lockLow) {
         //makes sure we wait for a transition to LOW before any further output is made:
         lockLow = false;
-        FadeIn(0x00, 0x00, 0xff, 13); //Wait until Serial print work is done before activating strip
+        FadeIn(0x00, 0xff, 0x00, 13); //Wait until Serial print work is done before activating strip
         delay(50);
       }
       takeLowTime = true;
