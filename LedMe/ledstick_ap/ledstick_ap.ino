@@ -35,7 +35,7 @@ int new_BRIGHTNESS =       160;   // shall be initially the same as brightness
 #define FRAMES_PER_SECOND  120    // here you can control the speed. With the Access Point / Web Server the 
 // animations run a bit slower.
 
-int ledMode = 13;                  // this is the starting animation
+int ledMode = 20;                  // this is the starting animation
 
 // Fire2012 by Mark Kriegsman, July 2012
 // as part of "Five Elements" shown here: http://youtu.be/knWiGsmgycY
