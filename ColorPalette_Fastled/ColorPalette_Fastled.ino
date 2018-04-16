@@ -1,7 +1,7 @@
 #include <FastLED.h>
 
-#define LED_PIN     0
-#define NUM_LEDS    60
+#define LED_PIN     6
+#define NUM_LEDS    40
 #define BRIGHTNESS  60
 #define LED_TYPE    WS2811
 #define COLOR_ORDER GRB

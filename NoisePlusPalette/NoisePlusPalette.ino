@@ -1,8 +1,8 @@
 #include<FastLED.h>
 
-#define LED_PIN     0
-#define BRIGHTNESS  255
-#define LED_TYPE    WS2811
+#define LED_PIN     6
+#define BRIGHTNESS  140
+#define LED_TYPE    WS2812B
 #define COLOR_ORDER GRB
 
 const uint8_t kMatrixWidth  = 16;

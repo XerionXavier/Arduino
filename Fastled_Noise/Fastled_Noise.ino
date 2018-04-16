@@ -32,13 +32,12 @@
 #error "Requires FastLED 3.1 or later; check github for latest code."
 #endif
 
-#define LED_PIN     0
-#define CLK_PIN     11
-#define BRIGHTNESS  255
+#define LED_PIN     6
+#define BRIGHTNESS  220
 #define LED_TYPE    WS2812      // Only use the LED_PIN for WS2812's
 #define COLOR_ORDER GRB
 
-#define NUM_LEDS 60
+#define NUM_LEDS 40
 
 struct CRGB leds[NUM_LEDS];
 
@@ -73,8 +72,7 @@ void loop() {
   }
 
   LEDS.show();                    // Display the LED's at every loop cycle.
-} // loop()
-
+} 
 
 void fillnoise8() {
   for(int i = 0; i < NUM_LEDS; i++) {                                      // Just ONE loop to fill up the LED array as all of the pixels change.
