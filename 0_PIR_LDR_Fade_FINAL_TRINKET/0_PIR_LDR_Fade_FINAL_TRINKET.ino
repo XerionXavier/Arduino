@@ -17,7 +17,7 @@ const int numLeds = 20;
 const int pirPin = 0;
 const int ldrPin = 1; //ldr #1. Physical GPIO pin #2
 const int ledPin = 3;
-const int threshold = 40; //Should be 70
+const int threshold = 20; //Should be 70
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(numLeds, ledPin, NEO_GRB + NEO_KHZ800);
 
 void setup() {
