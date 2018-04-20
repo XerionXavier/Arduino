@@ -1,5 +1,5 @@
 #include "FastLED.h"
-#define NUM_LEDS 40
+#define NUM_LEDS 20
 #define COLOR_ORDER GRB
 CRGB leds[NUM_LEDS];
 
@@ -18,9 +18,9 @@ long unsigned int pause = 10000;
 boolean lockLow = true;
 boolean takeLowTime;
 
-const int pirPin = 2;  //Trinket PIR pin 0
-const int ldrPin = A0; //ldr #1. Physical GPIO pin #2
-const int PIN = 6; //Trinket pin 3
+const int pirPin = 0;  //Trinket PIR pin 0
+const int ldrPin = 2; //ldr #1. Physical GPIO pin #2
+const int PIN = 3; //Trinket pin 3
 const int threshold = 20; //Should be 70
 
 void setup()
