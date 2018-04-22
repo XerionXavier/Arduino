@@ -19,7 +19,7 @@ boolean lockLow = true;
 boolean takeLowTime;
 
 const int pirPin = 0;  //Trinket PIR pin 0
-const int ldrPin = 2; //ldr #1. Physical GPIO pin #2
+const int ldrPin = 1; //ldr analog #1. Physical Trinket GPIO pin #2
 const int PIN = 3; //Trinket pin 3
 const int threshold = 20; //Should be 70
 
