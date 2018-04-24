@@ -13,7 +13,7 @@ long unsigned int lowIn;
 
 //the amount of milliseconds the sensor has to be low
 //before we assume all motion has stopped
-long unsigned int pause = 10000;
+long unsigned int pause = 25000;
 
 boolean lockLow = true;
 boolean takeLowTime;
