@@ -4,7 +4,7 @@
 CRGB leds[NUM_LEDS];
 
 //the time we give the sensor to calibrate (10-60 secs according to the datasheet)
-int calibrationTime = 15;
+int calibrationTime = 20;
 
 uint16_t scale = 30;
 
@@ -13,7 +13,7 @@ long unsigned int lowIn;
 
 //the amount of milliseconds the sensor has to be low
 //before we assume all motion has stopped
-long unsigned int pause = 25000;
+long unsigned int pause = 60000;
 
 boolean lockLow = true;
 boolean takeLowTime;
@@ -34,8 +34,8 @@ void setup()
   FastLED.addLeds<WS2812B, PIN, GRB>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
 
   FastLED.show();
-  FastLED.setBrightness(220);
-  #define MILLI_AMPERE      1800    // IMPORTANT: set here the max milli-Amps of your power supply 5V 2A = 2000
+  FastLED.setBrightness(255);
+  #define MILLI_AMPERE      2000    // IMPORTANT: set here the max milli-Amps of your power supply 5V 2A = 2000
   #define FRAMES_PER_SECOND  120    // here you can control the speed. With the Access Point / Web Server the 
 
   for (int i = 0; i < calibrationTime; i++) {
