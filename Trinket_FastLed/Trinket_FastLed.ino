@@ -13,7 +13,7 @@ long unsigned int lowIn;
 
 //the amount of milliseconds the sensor has to be low
 //before we assume all motion has stopped
-long unsigned int pause = 60000;
+long unsigned int pause = 45000;
 
 boolean lockLow = true;
 boolean takeLowTime;
@@ -21,7 +21,7 @@ boolean takeLowTime;
 const int pirPin = 0;  //Trinket PIR pin 0
 const int ldrPin = 1; //ldr analog #1. Physical Trinket GPIO pin #2
 const int PIN = 3; //Trinket pin 3
-const int threshold = 20; //Should be 70
+const int threshold = 15;
 
 void setup()
 {
@@ -50,7 +50,7 @@ void loop() {
       if (lockLow) {
         //makes sure we wait for a transition to LOW before any further output is made:
         lockLow = false;
-        FadeIn(0xff, 0x00, 0x00, 13); //Wait until Serial print work is done before activating strip
+        FadeIn(0xff, 0x00, 0x00, 5); //Wait until Serial print work is done before activating strip
         delay(50);
       }
       takeLowTime = true;
@@ -66,7 +66,7 @@ void loop() {
     if (!lockLow && millis() - lowIn > pause) {
       //makes sure this block of code is only executed again after a new motion sequence has been detected
       lockLow = true;
-      FadeOut(0xff, 0x00, 0x00, 13);
+      FadeOut(0xff, 0x00, 0x00, 5);
       delay(50);
     }
   }
@@ -74,7 +74,7 @@ void loop() {
 void FadeIn(byte red, byte green, byte blue, uint8_t wait) {
   float r, g, b;
 
-  for (int k = 0; k < 256; k = k + 1) {
+  for (int k = 0; k < 256; k += 1) {
     r = (k / 256.0) * red;
     g = (k / 256.0) * green;
     b = (k / 256.0) * blue;
@@ -87,7 +87,7 @@ void FadeIn(byte red, byte green, byte blue, uint8_t wait) {
 void FadeOut(byte red, byte green, byte blue, uint8_t wait) {
   float r, g, b;
 
-  for (int k = 255; k >= 0; k = k - 2) {
+  for (int k = 255; k >= 0; k -= 2) {
     r = (k / 256.0) * red;
     g = (k / 256.0) * green;
     b = (k / 256.0) * blue;
@@ -112,15 +112,4 @@ void setAll(byte red, byte green, byte blue) {
     setPixel(i, red, green, blue);
   }
   showStrip();
-}
-
-void confetti()
-{
-  // random colored speckles that blink in and fade smoothly
-  fadeToBlackBy( leds, NUM_LEDS, 10);
-  int pos = random16(NUM_LEDS);
-  int8_t gHue = 0; // rotating "base color" used by many of the patterns
-  leds[pos] += CHSV( gHue + random8(64), 200, 255);
-  show_at_max_brightness_for_power();
-  delay_at_max_brightness_for_power(1000 / FRAMES_PER_SECOND);
 }
