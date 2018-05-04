@@ -13,7 +13,7 @@ long unsigned int lowIn;
 
 //the amount of milliseconds the sensor has to be low
 //before we assume all motion has stopped
-long unsigned int pause = 45000;
+long unsigned int pause = 60000;
 
 boolean lockLow = true;
 boolean takeLowTime;
@@ -35,8 +35,8 @@ void setup()
 
   FastLED.show();
   FastLED.setBrightness(255);
-  #define MILLI_AMPERE      2000    // IMPORTANT: set here the max milli-Amps of your power supply 5V 2A = 2000
-  #define FRAMES_PER_SECOND  120    // here you can control the speed. With the Access Point / Web Server the 
+#define MILLI_AMPERE      2000    // IMPORTANT: set here the max milli-Amps of your power supply 5V 2A = 2000
+#define FRAMES_PER_SECOND  120    // here you can control the speed. With the Access Point / Web Server the 
 
   for (int i = 0; i < calibrationTime; i++) {
     delay(1000);
@@ -71,6 +71,7 @@ void loop() {
     }
   }
 }
+
 void FadeIn(byte red, byte green, byte blue, uint8_t wait) {
   float r, g, b;
 
