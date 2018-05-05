@@ -21,7 +21,7 @@ boolean takeLowTime;
 const int pirPin = 0;  //Trinket PIR pin 0
 const int ldrPin = 1; //ldr analog #1. Physical Trinket GPIO pin #2
 const int PIN = 3; //Trinket pin 3
-const int threshold = 10;
+const int threshold = 5;
 
 void setup()
 {
